@@ -3,9 +3,9 @@ import PropTypes from "prop-types"
 
 function Home ({ children }) {
   return (
-	<div className="container">
+	<main className="container mt-3">
 	 {children}
-	</div>
+	</main>
   )
 }
 
