@@ -1,9 +1,13 @@
+import http from "../../services/http"
 import { ActionTypes } from "../constants/ActionTypes"
 
-export const fetchProduct = (products) => {
-  return {
-    type: ActionTypes.FETCH_PRODUCTS,
-    payload: products
+export const fetchProduct = () => {
+  return async (dispatch) => {
+    const response = await http.get("/products")
+    dispatch({
+      type: ActionTypes.FETCH_PRODUCTS,
+      payload: response.data
+    })
   }
 }
 

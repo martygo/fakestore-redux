@@ -1,6 +1,5 @@
 import React from "react"
 import { useDispatch } from "react-redux"
-import axios from "axios"
 
 import { fetchProduct } from "../../redux/actions/ProductActions"
 
@@ -9,18 +8,8 @@ import ProductItem from "./ProductItem"
 function AllProducts () {
   const dispacth = useDispatch()
 
-  const getProducts = async () => {
-    const response = await axios
-      .get("https://fakestoreapi.com/products")
-      .catch((err) => {
-        console.log("Err", err)
-      })
-
-    dispacth(fetchProduct(response.data))
-  }
-
   React.useEffect(() => {
-    getProducts()
+    dispacth(fetchProduct())
   }, [])
 
   return (
