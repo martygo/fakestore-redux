@@ -1,4 +1,4 @@
-export const ActionTypes = {
+export const ProductActionTypes = {
   FETCH_PRODUCTS: "FETCH_PRODUCTS",
   SELECTED_PRODUCT: "SELECTED_PRODUCT",
   REMOVE_PRODUCT: "REMOVE_PRODUCT"
